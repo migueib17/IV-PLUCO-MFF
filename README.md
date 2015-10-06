@@ -15,4 +15,4 @@ En cuanto a la seguridad de nuestra plataforma los objetivos son: Permitir tener
 
 ###Infraestuctura
 
-Un sistema de almacenamiento sftp de recursos en la nube, que se usaraá para la organización, administración y compartición de archivos. Todo esto irá implementado en otro servidor que usaremos de Cloud Storage, además de un sistema de acceso a los datos y recursos por parte de los usuarios.
+En mi infraestructura realizaré un sistema de almacenamiento sftp de recursos en la nube, que se usará para la organización, administración y compartición de archivos. Todo esto irá implementado en otro servidor que usaremos de Cloud Storage, además de un sistema de acceso a los datos y recursos por parte de los usuarios.
