@@ -16,3 +16,6 @@ En cuanto a la seguridad de nuestra plataforma los objetivos son: Permitir tener
 ###Infraestuctura
 
 En mi infraestructura realizaré un sistema de almacenamiento sftp de recursos en la nube, que se usará para la organización, administración y compartición de archivos. Todo esto irá implementado en otro servidor que usaremos de Cloud Storage, además de un sistema de acceso a los datos y recursos por parte de los usuarios.
+Tendremos al final un servicio de almacenamiento y compartición de recursos en la nube, donde cada usuario podrá subir sus propios archvivos y compartir archivos con los demás usuarios.
+Tendremos que hacer un registro asociado a los usuarios que se dan de alta en la nube para permitir subir los mismos.
+Para todo esto usaré un servidor Cloud Storage de Azure, y la web asociada a este servicio, y sus tablas de datos asociadas también.
