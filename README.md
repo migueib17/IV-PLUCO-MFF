@@ -1,6 +1,8 @@
 # IV-PLUCO-MFF
 Proyecto PLUCO - Red Social PLUCO - Miguel Fernández Fernández
 
+[Apuntado en el proyecto de software libre de la oficina OSL](http://osl.ugr.es/bases-de-los-premios-a-proyectos-libres-de-la-ugr/)
+
 #INFRAESTRUCTURA VIRTUAL
 
 #PLATAFORMA UNIVERSITARIA DE COMPARTICIÓN DE CONOCIMIENTOS: PLUCO
