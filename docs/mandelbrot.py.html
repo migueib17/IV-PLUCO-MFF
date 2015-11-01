@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>. documentation: mandelbrot.py</title>
+  <link rel="stylesheet" href="./pyccoon.css">
+</head>
+<body>
+<div id='container' >
+  <div id="footer">
+    <span id="project-name">
+        <a class="btn" href="./index.html">. documentation</a>
+    </span>
+    <a class="btn" class="source source-1" href="#top">Back to top</a>
+    <div class="generation-time">
+        Generated at
+        <code>2015-10-31 20:19</code>
+        by a diligent
+        <a target="_blank" href="http://ckald.github.io/pyccoon/" title="Pyccoon: side-to-side documentation generator">
+            <img id="pyccoon-icon" src="./pyccoon_icon.svg" alt="Pyccoon: side-to-side documentation generator" />pyccoon</a>
+    </div>
+  </div>
+  <a id="top"></a>
+  <div class='section'>
+    <div class='docs nav'>
+      <nav id="breadcrumbs">/ <a href="mandelbrot.py.html/../index.html">.</a> / mandelbrot.py</nav>
+      <ul id="children"></ul>
+    </div>
+  </div>
+  <div id="everything" class='clearall'>
+    <div id="background"></div>
+    <div class='section'>
+    <a id="section-0" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-0'>#</a>
+          </div>
+          
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre><span class="c">#!/usr/bin/python</span>
+<span class="c"># -*- coding: utf-8 -*-</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-1" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-1'>#</a>
+          </div>
+          <p>Practicas de Desarrollo de Aplicaciones para Internet (DAI)
+Copyright (C) 2013 - Zerjillo (zerjioi@ugr.es)</p>
+<p>This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License
+along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-2" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-2'>#</a>
+          </div>
+          <p>Renderiza un fractal de Mandelbrot de (x1, y1) a (x2, y2) de ancho pixeles, iteraciones máximas y lo guarda en el fichero especificado en nombreFicheroPNG (debe tener extesión .png)</p>
+        </div>
+        <div class='code'>
+          
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-3" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-3'>#</a>
+          </div>
+          <p>drawing area</p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre><span class="k">def</span> <span class="nf">renderizaMandelbrot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">ancho</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="n">nombreFicheroPNG</span><span class="p">):</span>
+
+	<span class="n">xa</span> <span class="o">=</span> <span class="n">x1</span>
+	<span class="n">xb</span> <span class="o">=</span> <span class="n">x2</span>
+	<span class="n">ya</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="mf">0.000001</span>
+	<span class="n">yb</span> <span class="o">=</span> <span class="n">y2</span>
+	<span class="n">maxIt</span> <span class="o">=</span> <span class="n">iteraciones</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-4" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-4'>#</a>
+          </div>
+          <p>image size</p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre>	<span class="n">imgx</span> <span class="o">=</span> <span class="n">ancho</span>
+	<span class="n">imgy</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ancho</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">));</span>
+	
+	<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">imgx</span><span class="p">,</span> <span class="n">imgy</span><span class="p">))</span>
+
+	<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imgy</span><span class="p">):</span>
+	    <span class="n">zy</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">yb</span> <span class="o">-</span> <span class="n">ya</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">imgy</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="o">+</span> <span class="n">ya</span>
+	    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imgx</span><span class="p">):</span>
+		<span class="n">zx</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">xb</span> <span class="o">-</span> <span class="n">xa</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">imgx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="o">+</span> <span class="n">xa</span>
+		<span class="n">z</span> <span class="o">=</span> <span class="n">zx</span> <span class="o">+</span> <span class="n">zy</span> <span class="o">*</span> <span class="mi">1j</span>
+		<span class="n">c</span> <span class="o">=</span> <span class="n">z</span>
+		<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxIt</span><span class="p">):</span>
+		    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">2.0</span><span class="p">:</span> <span class="k">break</span> 
+		    <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span> <span class="o">+</span> <span class="n">c</span>
+		    
+		<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">maxIt</span><span class="p">):</span>
+                    <span class="n">image</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">image</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">64</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">32</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span> <span class="o">*</span> <span class="mi">16</span><span class="p">))</span>
+
+	<span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nombreFicheroPNG</span><span class="p">,</span> <span class="s">&quot;PNG&quot;</span><span class="p">)</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-5" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-5'>#</a>
+          </div>
+          <p>paleta es una lista de 3-tuplas con los valores RGB de cada color de la paleta</p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre><span class="k">def</span> <span class="nf">getColorPaleta</span><span class="p">(</span><span class="n">paleta</span><span class="p">,</span> <span class="n">nColoresPaleta</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="n">nuevoColor</span> <span class="o">=</span> <span class="n">color</span> <span class="o">%</span> <span class="p">(</span><span class="n">nColoresPaleta</span><span class="p">)</span>
+        
+        <span class="n">nPuntosControlPaleta</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">paleta</span><span class="p">)</span>
+        
+        <span class="n">icolor1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">nuevoColor</span><span class="p">)</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">nPuntosControlPaleta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">nColoresPaleta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-6" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-6'>#</a>
+          </div>
+          <p>print len(paleta)
+print int(icolor1)</p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre>        
+        <span class="k">if</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">icolor1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">paleta</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>  <span class="c"># Devolvemos el último color</span>
+
+                <span class="k">return</span> <span class="n">paleta</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">paleta</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-7" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-7'>#</a>
+          </div>
+          
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre>        <span class="n">porcentajeC2</span> <span class="o">=</span> <span class="n">icolor1</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">icolor1</span><span class="p">)</span>
+        <span class="n">porcentajeC1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">porcentajeC2</span>
+        <span class="n">icolor1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">icolor1</span><span class="p">)</span>
+        <span class="n">icolor2</span> <span class="o">=</span> <span class="n">icolor1</span> <span class="o">+</span> <span class="mi">1</span>
+        
+        <span class="n">nr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">paleta</span><span class="p">[</span><span class="n">icolor1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">porcentajeC1</span> <span class="o">+</span> <span class="n">paleta</span><span class="p">[</span><span class="n">icolor2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">porcentajeC2</span><span class="p">)</span>
+        <span class="n">ng</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">paleta</span><span class="p">[</span><span class="n">icolor1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">porcentajeC1</span> <span class="o">+</span> <span class="n">paleta</span><span class="p">[</span><span class="n">icolor2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">porcentajeC2</span><span class="p">)</span>
+        <span class="n">nb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">paleta</span><span class="p">[</span><span class="n">icolor1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">porcentajeC1</span> <span class="o">+</span> <span class="n">paleta</span><span class="p">[</span><span class="n">icolor2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">porcentajeC2</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="p">(</span><span class="n">nr</span><span class="p">,</span> <span class="n">ng</span><span class="p">,</span> <span class="n">nb</span><span class="p">)</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-8" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-8'>#</a>
+          </div>
+          <p>Renderiza un fractal de Mandelbrot de (x1, y1) a (x2, y2) de ancho pixeles, iteraciones máximas y lo guarda en el fichero especificado en nombreFicheroPNG (debe tener extesión .png) y permitiendo especificar una paleta de colores: paleta es una lista de 3-tuplas con los valores RGB de cada color de la paleta</p>
+        </div>
+        <div class='code'>
+          
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-9" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-9'>#</a>
+          </div>
+          <p>drawing area</p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre><span class="k">def</span> <span class="nf">renderizaMandelbrotBonito</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">ancho</span><span class="p">,</span> <span class="n">iteraciones</span><span class="p">,</span> <span class="n">nombreFicheroPNG</span><span class="p">,</span> <span class="n">paleta</span><span class="p">,</span> <span class="n">nColoresPaleta</span><span class="p">):</span>
+
+        <span class="n">xa</span> <span class="o">=</span> <span class="n">x1</span>
+        <span class="n">xb</span> <span class="o">=</span> <span class="n">x2</span>
+        <span class="n">ya</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">+</span> <span class="mf">0.000001</span>
+        <span class="n">yb</span> <span class="o">=</span> <span class="n">y2</span>
+        <span class="n">maxIt</span> <span class="o">=</span> <span class="n">iteraciones</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-10" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-10'>#</a>
+          </div>
+          <p>image size</p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre>        <span class="n">imgx</span> <span class="o">=</span> <span class="n">ancho</span>
+        <span class="n">imgy</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">abs</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ancho</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">));</span>
+        
+        <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">imgx</span><span class="p">,</span> <span class="n">imgy</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imgy</span><span class="p">):</span>
+            <span class="n">zy</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">yb</span> <span class="o">-</span> <span class="n">ya</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">imgy</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="o">+</span> <span class="n">ya</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imgx</span><span class="p">):</span>
+                <span class="n">zx</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">xb</span> <span class="o">-</span> <span class="n">xa</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">imgx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="o">+</span> <span class="n">xa</span>
+                <span class="n">z</span> <span class="o">=</span> <span class="n">zx</span> <span class="o">+</span> <span class="n">zy</span> <span class="o">*</span> <span class="mi">1j</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">z</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxIt</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">2.0</span><span class="p">:</span> <span class="k">break</span> 
+                    <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">z</span> <span class="o">+</span> <span class="n">c</span>
+                
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">maxIt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="n">image</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c"># El nucleo del fractal en negro</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">image</span><span class="o">.</span><span class="n">putpixel</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">getColorPaleta</span><span class="p">(</span><span class="n">paleta</span><span class="p">,</span> <span class="n">nColoresPaleta</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+
+        <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nombreFicheroPNG</span><span class="p">,</span> <span class="s">&quot;PNG&quot;</span><span class="p">)</span>
+
+</pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>. documentation: _index_.py</title>
+  <link rel="stylesheet" href="./pyccoon.css">
+</head>
+<body>
+<div id='container' >
+  <div id="footer">
+    <span id="project-name">
+        <a class="btn" href="./index.html">. documentation</a>
+    </span>
+    <a class="btn" class="source source-1" href="#top">Back to top</a>
+    <div id="jump_to" class="btn">
+    Contents
+    <div id="jump_wrapper">
+      <div id="jump_page">
+          <a class="source source-1" href="#return-render_template('index.html')">return render_template('index.html')</a>
+          <a class="source source-1" href="#devuelve-la-pagina-hola.html,-y-le-pasa-como-parametro-el-nombre-de-usuario,-para-ello-usa-templates">devuelve la pagina hola.html, y le pasa como parametro el nombre de usuario, para ello usa templates</a>
+          <a class="source source-1" href="#return-render_template('hola.html',-usuario=user)">return render_template('hola.html', usuario=user)</a>
+          <a class="source source-1" href="#gestion-de-errores,-pagina-no-encontrada">Gestion de errores, pagina no encontrada</a>
+      </div>
+    </div>
+    </div>
+    <div class="generation-time">
+        Generated at
+        <code>2015-10-31 20:19</code>
+        by a diligent
+        <a target="_blank" href="http://ckald.github.io/pyccoon/" title="Pyccoon: side-to-side documentation generator">
+            <img id="pyccoon-icon" src="./pyccoon_icon.svg" alt="Pyccoon: side-to-side documentation generator" />pyccoon</a>
+    </div>
+  </div>
+  <a id="top"></a>
+  <div class='section'>
+    <div class='docs nav'>
+      <nav id="breadcrumbs">/ <a href="_index_.py.html/../index.html">.</a> / _index_.py</nav>
+      <ul id="children"></ul>
+    </div>
+  </div>
+  <div id="everything" class='clearall'>
+    <div id="background"></div>
+    <div class='section'>
+    <a id="section-0" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-0'>#</a>
+          </div>
+          
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre><span class="kn">import</span> <span class="nn">mandelbrot</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">escape</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">xml.etree</span> <span class="kn">import</span> <span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span>
+<span class="kn">import</span> <span class="nn">svgwrite</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-1" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-1'>#</a>
+          </div>
+          
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="n">url_for</span><span class="p">(</span><span class="s">&#39;static&#39;</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="s">&#39;style.css&#39;</span><span class="p">)</span>
+    <span class="n">url_for</span><span class="p">(</span><span class="s">&#39;static&#39;</span><span class="p">,</span><span class="n">filename</span><span class="o">=</span><span class="s">&#39;index.html&#39;</span><span class="p">)</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-2" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-2'>#</a>
+          </div>
+          <p>return ("<img src='static/image.jpg' width=120 height=120 alt='myimage'>")
+devuelve la pagina index de forma estatica</p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre>    <span class="k">return</span><span class="s">&quot;&quot;&quot; &lt;!DOCTYPE html&gt;</span>
+<span class="s">    &lt;html lang=&quot;en&quot;&gt;</span>
+<span class="s">    &lt;head&gt;</span>
+<span class="s">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span class="s">        &lt;title&gt;Index&lt;/title&gt;</span>
+<span class="s">        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../static/style.css&quot;&gt;</span>
+<span class="s">    &lt;/head&gt;</span>
+<span class="s">    &lt;body&gt;</span>
+<span class="s">        &lt;h1&gt;HELLO WORLD!&lt;/h1&gt;</span>
+<span class="s">        &lt;img src=&quot;static/image.jpg&quot; alt=&quot;image&quot; style=&quot;float: left&quot;&gt;</span>
+<span class="s">        &lt;h1 style=&quot;float: left&quot;&gt;&lt;a href=&quot;imagen&quot;&gt;crear imagen&lt;/a&gt;&lt;/h1&gt;</span>
+
+<span class="s">    &lt;/body&gt;</span>
+<span class="s">    &lt;/html&gt;</span>
+<span class="s">#DIVIDER</span>
+<span class="s">        &lt;!DOCTYPE html&gt;</span>
+<span class="s">        &lt;html lang=&quot;en&quot;&gt;</span>
+<span class="s">        &lt;head&gt;</span>
+<span class="s">            &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span class="s">            &lt;title&gt;Index&lt;/title&gt;</span>
+<span class="s">            &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../static/style.css&quot;&gt;</span>
+<span class="s">        &lt;/head&gt;</span>
+<span class="s">        &lt;body&gt;</span>
+
+<span class="s">        &lt;img src=&#39;/static/imagen.png&#39; alt=&#39;Dynamic Image&#39; &gt;</span>
+<span class="s">        &lt;/body&gt;</span>
+<span class="s">        &lt;/html&gt;&quot;&quot;&quot;</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-3" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-3'>#</a>
+          </div>
+          <h1><a id="return-render_template('index.html')" class="header-anchor" href="#return-render_template('index.html')">return render_template('index.html')</a></h1>
+<p><span class="pydoc pydoc-app"><span>app</span></span>.route('/imagen',methods=['GET', 'POST'])
+def crearImagen():
+if request.method == 'POST':
+    width = (int(request.form['widht']))
+    x1 = (int(request.form['x1']))
+    y1 = (int(request.form['y1']))
+    y2 = (int(request.form['y2']))
+    x2 = (int(request.form['x2']))
+    numIter = (int(request.form['numIter']))
+    color = (request.form['color'])
+    paleta = [255,0,0],[255,0,0],<a href="255,0,0],[255,0,0],[255,0,0">255,0,0</a>
+    mandelbrot.renderizaMandelbrotBonito(x1,y1,x2,y2,width,numIter,"static/imagen.png",paleta,3)
+    return </p>
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre>    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">&#39;&#39;&#39;&lt;form action=&quot;/imagen&quot; method=&quot;post&quot;&gt;</span>
+<span class="s">            &lt;p&gt;ancho&lt;input type=&quot;text&quot; name=&quot;widht&quot;/&gt;&lt;/p&gt;</span>
+<span class="s">            &lt;p&gt;x1&lt;input type=&quot;text&quot; name=&quot;x1&quot; /&gt;&lt;/p&gt;</span>
+<span class="s">            &lt;p&gt;x2&lt;input type=&quot;text&quot; name=&quot;x2&quot; /&gt;&lt;/p&gt;</span>
+<span class="s">            &lt;p&gt;y1&lt;input type=&quot;text&quot; name=&quot;y1&quot; /&gt;&lt;/p&gt;</span>
+<span class="s">            &lt;p&gt;y2&lt;input type=&quot;text&quot; name=&quot;y2&quot; /&gt;&lt;/p&gt;</span>
+<span class="s">            &lt;p&gt;numero de iteraciones&lt;input type=&quot;text&quot; name=&quot;numIter&quot;/&gt;&lt;/p&gt;</span>
+<span class="s">            &lt;p&gt;color&lt;input type=&quot;color&quot; name=&quot;color&quot;/&gt;&lt;/p&gt;</span>
+<span class="s">            &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Crear imagen&quot;/&gt;&lt;/p&gt;</span>
+<span class="s">        &lt;/form&gt;&#39;&#39;&#39;</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-4" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-4'>#</a>
+          </div>
+          
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre><span class="nd">@app.route</span><span class="p">(</span><span class="s">&#39;/svg&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">imagenSV</span><span class="p">():</span>
+    <span class="n">widht</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)))</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">)))</span>
+    <span class="n">radio</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)))</span>
+    <span class="n">rand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s">&#39;red&#39;</span><span class="p">,</span><span class="s">&#39;green&#39;</span><span class="p">,</span><span class="s">&#39;blue&#39;</span><span class="p">,</span><span class="s">&#39;yellow&#39;</span><span class="p">,</span><span class="s">&#39;orange&#39;</span><span class="p">,</span><span class="s">&#39;pink&#39;</span><span class="p">,</span><span class="s">&#39;black&#39;</span><span class="p">])</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">color</span><span class="p">))</span></pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-5" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-5'>#</a>
+          </div>
+          
+        </div>
+        <div class='code'>
+          <div class="highlight"><pre>    <span class="k">if</span> <span class="p">(</span><span class="n">rand</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">                &lt;!DOCTYPE html&gt;</span>
+<span class="s">                &lt;html&gt;</span>
+<span class="s">                    &lt;body&gt;</span>
+<span class="s">                    &lt;svg height=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">height</span><span class="o">+</span><span class="s">&quot;&quot;&quot; width=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">widht</span><span class="o">+</span><span class="s">&quot;&quot;&quot;&gt;</span>
+<span class="s">                        &lt;circle cx=&quot;&quot;&quot;</span><span class="o">+</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)))</span><span class="o">+</span><span class="s">&quot;&quot;&quot; cy=&quot;&quot;&quot;</span><span class="o">+</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)))</span><span class="o">+</span><span class="s">&quot;&quot;&quot; r=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">radio</span><span class="o">+</span><span class="s">&quot;&quot;&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; fill=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">color</span><span class="o">+</span><span class="s">&quot;&quot;&quot; /&gt;</span>
+<span class="s">                        Sorry, your browser does not support inline SVG.</span>
+<span class="s">                    &lt;/svg&gt;</span>
+<span class="s">                    &lt;/body&gt;</span>
+<span class="s">                &lt;/html&gt;&quot;&quot;&quot;</span>
+
+    <span class="k">elif</span> <span class="p">(</span><span class="n">rand</span><span class="o">==</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">        &lt;!DOCTYPE html&gt;</span>
+<span class="s">        &lt;html&gt;</span>
+<span class="s">            &lt;body&gt;</span>
+<span class="s">             &lt;svg width=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">widht</span><span class="o">+</span><span class="s">&quot;&quot;&quot; height=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">height</span><span class="o">+</span><span class="s">&quot;&quot;&quot;&gt;</span>
+<span class="s">                &lt;rect width=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">widht</span><span class="o">+</span><span class="s">&quot;&quot;&quot; height=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">height</span><span class="o">+</span><span class="s">&quot;&quot;&quot; fill=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">color</span><span class="o">+</span><span class="s">&quot;&quot;&quot; style=&quot;stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;</span>
+<span class="s">            &lt;/svg&gt;</span>
+<span class="s">            &lt;/body&gt;</span>
+<span class="s">        &lt;/html&gt;&quot;&quot;&quot;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">rand</span><span class="o">==</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">        &lt;!DOCTYPE html&gt;</span>
+<span class="s">        &lt;html&gt;</span>
+<span class="s">            &lt;body&gt;</span>
+<span class="s">             &lt;svg width=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">widht</span><span class="o">+</span><span class="s">&quot;&quot;&quot; height=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">height</span><span class="o">+</span><span class="s">&quot;&quot;&quot;&gt;</span>
+<span class="s">                &lt;rect width=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">widht</span><span class="o">+</span><span class="s">&quot;&quot;&quot; height=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">height</span><span class="o">+</span><span class="s">&quot;&quot;&quot; fill =&quot;&quot;&quot;</span><span class="o">+</span><span class="n">color</span><span class="o">+</span><span class="s">&quot;&quot;&quot; style=;stroke-width:3;stroke:rgb(0,0,0)&quot; /&gt;</span>
+<span class="s">            &lt;/svg&gt;</span>
+<span class="s">            &lt;/body&gt;</span>
+<span class="s">        &lt;/html&gt;&quot;&quot;&quot;</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">rand</span><span class="o">==</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">        &lt;!DOCTYPE html&gt;</span>
+<span class="s">        &lt;html&gt;</span>
+<span class="s">            &lt;body&gt;</span>
+<span class="s">                &lt;svg height=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">height</span><span class="o">+</span><span class="s">&quot;&quot;&quot; width=&quot;&quot;&quot;</span><span class="o">+</span><span class="n">widht</span><span class="o">+</span><span class="s">&quot;&quot;&quot;&gt;</span>
+<span class="s">                    &lt;polygon points=&quot;200,10 250,190 160,210&quot; fill = &quot;&quot;&quot;</span><span class="o">+</span><span class="n">color</span><span class="o">+</span><span class="s">&quot;&quot;&quot; style=stroke:purple;stroke-width:1&quot; /&gt;</span>
+<span class="s">                &lt;/svg&gt;</span>
+<span class="s">            &lt;/body&gt;</span>
+<span class="s">        &lt;/html&gt;</span>
+<span class="s">#DIVIDER</span>
+<span class="s">&lt;h1&gt;Pagina no encontrada&lt;/h1&gt;</span>
+<span class="s">    &lt;a href=&quot;/&quot;&gt;volver&lt;/a&gt;&quot;&quot;&quot;</span><span class="p">,</span> <span class="mi">404</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="bp">True</span> <span class="c">#modo debug activado</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">&#39;0.0.0.0&#39;</span><span class="p">,</span><span class="n">port</span><span class="o">=</span><span class="mi">1111</span><span class="p">)</span>
+
+</pre></div>
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-6" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-6'>#</a>
+          </div>
+          <p>Circulo 1,rectangulo 2, linea 3, triangulo 4</p>
+        </div>
+        <div class='code'>
+          
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+    <div class='section'>
+    <a id="section-7" class="section-anchor"></a>
+    <section>
+        <div class='docs'>
+          <div class='octowrap'>
+            <a class='octothorpe' href='#section-7'>#</a>
+          </div>
+          <h1><a id="devuelve-la-pagina-hola.html,-y-le-pasa-como-parametro-el-nombre-de-usuario,-para-ello-usa-templates" class="header-anchor" href="#devuelve-la-pagina-hola.html,-y-le-pasa-como-parametro-el-nombre-de-usuario,-para-ello-usa-templates">devuelve la pagina hola.html, y le pasa como parametro el nombre de usuario, para ello usa templates</a></h1>
+<p><span class="pydoc pydoc-app"><span>app</span></span>.route('/user/<user>')
+def hello_world(user=None):</p>
+<h1><a id="return-render_template('hola.html',-usuario=user)" class="header-anchor" href="#return-render_template('hola.html',-usuario=user)">return render_template('hola.html', usuario=user)</a></h1>
+<div class="codehilite"><pre>return &#39;Bienvenido %s&#39; % user
+</pre></div>
+
+
+<h1><a id="gestion-de-errores,-pagina-no-encontrada" class="header-anchor" href="#gestion-de-errores,-pagina-no-encontrada">Gestion de errores, pagina no encontrada</a></h1>
+<p><span class="pydoc pydoc-app"><span>app</span></span>.errorhandler(404)
+def page_not_found(error):
+    return </p>
+        </div>
+        <div class='code'>
+          
+        </div>
+        <div class='clearall'></div>
+    </section>
+    </div>
+  </div>
+</body>
