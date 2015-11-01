@@ -1,0 +1,23 @@
+{
+  "name": "iv-pluco-mff",
+  "version": "1.0.0",
+  "description": "social web, Platform for University Sharing Knowledge. Helping users or students on the degress, etc.",
+  "main": "index.js",
+  "dependencies": {
+    "nose": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migueib17/IV-PLUCO-MFF.git"
+  },
+  "author": "Miguel Fdez Fdez",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/migueib17/IV-PLUCO-MFF/issues"
+  },
+  "homepage": "https://github.com/migueib17/IV-PLUCO-MFF#readme"
+}
