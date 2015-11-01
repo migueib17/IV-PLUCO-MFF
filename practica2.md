@@ -41,7 +41,7 @@ El resto de mis compañeros deberán crear:
 Al final del proyecto, deberemos enlazar en conjunto las tres partes del proyecto, y realizar el despliegue correcto.
 
 ==
-#HITO 2 : Integracion Continua
+#HITO 2 : Integración Continua
 
 ##Configuracion
 
