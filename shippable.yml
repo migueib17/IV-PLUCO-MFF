@@ -1,0 +1,50 @@
+language: python
+build_image: shippableimages/ubuntu1204_python
+python:
+- 2.6
+- 2.7
+- 3.2
+- 3.3
+- 3.4
+- pypy
+author:
+- Miguel Fernández Fernández
+name:
+- Pluco MFF
+description:
+- A platform for sharing information, with forums to sharing issues and resolve problems.
+install:
+- pip install pyyaml
+- pip install grunt-django
+- pip install nose
+- pip install pytest
+- pip install tox
+- pip install pytest-cov
+- pip install pytest-xdist
+- easy_install nose
+- pip install pystache
+- pip install pygments
+- pip install markdown
+- pip install importlib
+- pip install pyccoon
+- pip install pillow
+
+# Make folders for the reports
+before_script:
+- mkdir -p shippable/testresults
+- mkdir -p shippable/codecoverage
+- mkdir -p shippable/documentation
+- mkdir -p shippable/test
+
+script:
+- which python
+- nosetests
+- pyccoon #generamos documentacion
+- make   #ejecutamos makefile
+#Basic test central
+#- py.test --cov=tests/
+#Distribution load test
+#- py.test --cov= -n 2 tests/
+notifications:
+email:
+- migueib17@correo.ugr.es
