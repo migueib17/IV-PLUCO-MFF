@@ -240,5 +240,5 @@ migueib17: ~/IV-PLUCO-MFF $ git commit -m "Nuevo travis python"
  rewrite .travis.yml (72%)
 rmigueib17: ~/IV-PLUCO-MFF $ git push origin master
 ```
-4. Ejecutan los tests en Travis y funciona todo de forma correcta
-![Imagen Travis]()
+4. Ejecutan los tests en Travis.
+![Imagen Travis](http://i1379.photobucket.com/albums/ah138/migueib17/9_zpsinwhlwb6.png)
